@@ -1,0 +1,5 @@
+.time {
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-small);
+	color: var(--primary-200);
+}

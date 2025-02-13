@@ -1,0 +1,21 @@
+.header {
+	display: flex;
+}
+
+.author {
+	color: var(--primary-900);
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-small);
+}
+
+.email {
+	color: var(--primary-200);
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-small);
+}
+
+.description {
+	color: var(--primary-300);
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-x-large);
+}
