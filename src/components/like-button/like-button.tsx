@@ -3,13 +3,13 @@
 import { FC, HTMLAttributes } from "react";
 import { Icon } from "@/components";
 
-import styles from './like.module.css';
+import styles from './like-button.module.css';
 
-interface LikeBtnProps extends HTMLAttributes<HTMLButtonElement> {
+interface LikeButtonProps extends HTMLAttributes<HTMLButtonElement> {
   rounded?: boolean
 }
 
-export const LikeBtn: FC<LikeBtnProps> = ({ rounded = false, ...props }) => {
+export const LikeButton: FC<LikeButtonProps> = ({ rounded = false, ...props }) => {
   return (
     <button
       onClick={() => alert('click')}
