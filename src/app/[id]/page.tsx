@@ -1,23 +1,41 @@
-import { getPostById } from "@/api"
+import { getCommentsByPostId, getPostById } from "@/api";
 import { Author, CommentList, Form, LikeButton, TextDivider, TimeText } from "@/components"
 import Image from "next/image"
+import { Metadata } from "next"
 
 import styles from './page.module.css'
 
+type PromisePageId = Promise<{ id: string }>
+
 type DetailPostPageProps = {
-  params: { id: string }
+  params: PromisePageId
 }
 
+type MetaProps = {
+  params: PromisePageId
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
-export async function generateMetadata({ params }: DetailPostPageProps) {
+export async function generateMetadata(
+  { params }: MetaProps,
+): Promise<Metadata> {
+  const postId = (await params).id
+
+  const post = await getPostById(postId)
+
   return {
-    title: 'Post ' + params.id,
-    description: 'Detailed post-page'
+    title: post.title,
+    description: post.body
   }
 }
 
+
 export default async function DetailPostPage({ params }: DetailPostPageProps) {
-  const post = await getPostById(params.id)
+
+  const postId = (await params).id
+  const post = await getPostById(postId)
+  const comments = await getCommentsByPostId(postId)
+
   return (
     <main className={styles.container}>
       <h1 className={styles.title + ' ' + styles.large}>{post.title}</h1>
@@ -40,7 +58,7 @@ export default async function DetailPostPage({ params }: DetailPostPageProps) {
         <LikeButton rounded />
       </div>
       <h2 className={styles.title}>Комментарии</h2>
-      <CommentList postId={+params.id} />
+      <CommentList comments={comments} />
       <Form />
     </main>
   )
