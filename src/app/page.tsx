@@ -1,15 +1,14 @@
 import { Suspense } from 'react'
-import { getPosts } from "@/api";
-import { PostList } from "@/components";
-
+import { getPosts } from '@/api'
+import { PostList } from '@/components'
 
 export default async function Home() {
-  const posts = await getPosts();
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <main>
-        <PostList posts={posts} />
-      </main>
-    </Suspense>
-  );
+	const posts = await getPosts()
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<main>
+				<PostList posts={posts} />
+			</main>
+		</Suspense>
+	)
 }
