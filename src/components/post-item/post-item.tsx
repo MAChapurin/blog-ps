@@ -20,7 +20,7 @@ export const PostItem: FC<Omit<Post, 'userId'>> = ({ body, title, id }) => {
 				<TextDivider />
 				<TimeText dateTime='2025-01-01'>1 месяц назад</TimeText>
 				<div className={styles.header__actions}>
-					<LikeButton />
+					<LikeButton id={id.toString()} />
 				</div>
 			</header>
 			<section className={styles.section}>
