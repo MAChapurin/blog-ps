@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Author, Icon, LikeButton, TimeText } from '@/components'
+import { Author, Icon, LikeButton, TextDivider, TimeText } from '@/components'
 
 import styles from './post-item.module.css'
 
@@ -17,7 +17,7 @@ export const PostItem: FC<Omit<Post, 'userId'>> = ({ body, title, id }) => {
 			/>
 			<header className={styles.header}>
 				<Author />
-				<div className={styles.textDivider}>.</div>
+				<TextDivider />
 				<TimeText dateTime='2025-01-01'>1 месяц назад</TimeText>
 				<div className={styles.header__actions}>
 					<LikeButton />

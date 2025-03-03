@@ -1,13 +1,13 @@
 'use client'
 
-import { FC, HTMLAttributes } from 'react'
+import { FC } from 'react'
 import { Icon } from '@/components'
+
+import { LikeButtonProps } from './like-button.types'
 
 import styles from './like-button.module.css'
 
-interface LikeButtonProps extends HTMLAttributes<HTMLButtonElement> {
-	rounded?: boolean
-}
+
 
 export const LikeButton: FC<LikeButtonProps> = ({
 	rounded = false,

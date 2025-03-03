@@ -1,11 +1,10 @@
 import { FC } from 'react'
 import { Comment } from '@/components'
 
+import { CommentListProps } from './comment-list.types'
+
 import styles from './comment-list.module.css'
 
-interface CommentListProps {
-	comments: Comment[]
-}
 
 export const CommentList: FC<CommentListProps> = async ({ comments }) => {
 	return await (

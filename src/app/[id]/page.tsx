@@ -8,20 +8,12 @@ import {
 	TimeText
 } from '@/components'
 import Image from 'next/image'
+
 import { Metadata } from 'next'
+import { DetailPostPageProps, MetaProps } from './page.types'
 
 import styles from './page.module.css'
 
-type PromisePageId = Promise<{ id: string }>
-
-type DetailPostPageProps = {
-	params: PromisePageId
-}
-
-type MetaProps = {
-	params: PromisePageId
-	searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}
 
 export async function generateMetadata({
 	params

@@ -1,11 +1,9 @@
-import { FC, HTMLAttributes, ReactNode } from 'react'
+import { FC } from 'react'
+
+import { TimeTextProps } from './time.types'
 
 import styles from './time.module.css'
 
-interface TimeTextProps extends HTMLAttributes<HTMLElement> {
-	children: ReactNode
-	dateTime: string
-}
 
 export const TimeText: FC<TimeTextProps> = ({
 	children,

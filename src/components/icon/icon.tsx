@@ -1,10 +1,6 @@
-import { FC, SVGProps } from 'react'
+import { FC } from 'react'
+import { IconProps } from './icon.types'
 
-interface IconProps extends SVGProps<SVGSVGElement> {
-	id: string
-	width?: number
-	height?: number
-}
 
 export const Icon: FC<IconProps> = ({
 	id,

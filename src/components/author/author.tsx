@@ -1,12 +1,10 @@
 import Link from 'next/link'
 import { FC } from 'react'
 
+import { AuthorProps } from './author.types'
+
 import styles from './author.module.css'
 
-interface AuthorProps {
-	href?: string
-	author?: string
-}
 
 export const Author: FC<AuthorProps> = ({
 	href = '/',

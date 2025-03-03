@@ -1,15 +1,16 @@
 import { PostItem } from '@/components'
+
+import { PostListProps } from './post-list.types'
+
 import styles from './post-list.module.css'
 
-interface PostListProps {
-	posts: Post[]
-}
+
 
 export const PostList: React.FC<PostListProps> = ({ posts }) => {
 	return (
 		<ul className={styles.list}>
 			{posts.map(post => (
-				<li className={styles.item} key={post.id}>
+				<li key={post.id}>
 					<PostItem
 						body={post.body + post.body}
 						title={post.title}

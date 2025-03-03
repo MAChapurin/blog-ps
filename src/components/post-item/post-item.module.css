@@ -19,6 +19,9 @@
 	line-height: var(--line-height-x-large);
 	color: var(--primary-900);
 	margin-bottom: 6px;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .description {
