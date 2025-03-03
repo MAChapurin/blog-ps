@@ -1,0 +1,31 @@
+.form {
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.input {
+	padding: 18px 29px;
+	border: 1px solid #28282816;
+	border-radius: 8px;
+}
+
+.textArea {
+	padding: 18px 29px;
+	border: 1px solid #28282816;
+	border-radius: 8px;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	max-width: 229px;
+	min-height: 48px;
+	color: #fff;
+	background-color: var(--primary-800);
+	border-radius: 8px;
+}

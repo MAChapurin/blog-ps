@@ -1,0 +1,11 @@
+.textDivider {
+	width: 14px;
+	height: 14px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
+	text-align: center;
+	vertical-align: middle;
+	color: var(--primary-200);
+}

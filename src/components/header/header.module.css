@@ -1,0 +1,16 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: clamp(
+		300px,
+		calc(100% - var(--padding-layout-x) * 2),
+		calc(1200px - var(--padding-layout-x) * 2)
+	);
+	min-height: 100px;
+	background: #fff;
+	z-index: 10;
+}
