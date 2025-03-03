@@ -4,6 +4,15 @@
 	line-height: var(--line-height-small);
 	display: flex;
 	align-items: center;
+	transition:
+		color 0.3s,
+		background 0.3s,
+		opacity 0.3s,
+		transform 0.3s;
+}
+
+.like:disabled {
+	cursor: not-allowed;
 }
 
 .count {
@@ -19,4 +28,24 @@
 	justify-content: center;
 	border-radius: 50%;
 	border: 1px solid var(--primary-800);
+	color: var(--primary-800);
+}
+
+.isLiked {
+	background: var(--primary-800);
+	color: var(--white-100);
+}
+
+.rounded:active {
+	transform: scale(0.95);
+}
+
+@media (hover: hover) {
+	.rounded:hover {
+		opacity: 0.8;
+	}
+
+	.rounded:disabled:hover {
+		opacity: 1;
+	}
 }
