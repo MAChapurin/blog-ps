@@ -18,8 +18,8 @@ import styles from './page.module.css'
 export async function generateMetadata({
 	params
 }: MetaProps): Promise<Metadata> {
-	const postId = (await params).id
 
+	const postId = (await params).id
 	const post = await getPostById(postId)
 
 	return {
@@ -43,7 +43,7 @@ export default async function DetailPostPage({ params }: DetailPostPageProps) {
 				<TextDivider />
 				<TimeText dateTime='3m'>3 минуты</TimeText>
 				<TextDivider />
-				<LikeButton />
+				<LikeButton id={postId} />
 			</div>
 			<Image
 				className={styles.img}
@@ -60,7 +60,7 @@ export default async function DetailPostPage({ params }: DetailPostPageProps) {
 
 			<div className={styles.wrapper}>
 				<span>Понравилось? Жми</span>
-				<LikeButton rounded />
+				<LikeButton rounded id={postId} />
 			</div>
 			<h2 className={styles.title}>Комментарии</h2>
 			<CommentList comments={comments} />
