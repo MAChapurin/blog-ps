@@ -49,3 +49,13 @@
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-small);
 }
+
+.link svg {
+	transition: transform 0.3s;
+}
+
+@media (hover: hover) {
+	.link:hover svg {
+		transform: translateX(5px);
+	}
+}
