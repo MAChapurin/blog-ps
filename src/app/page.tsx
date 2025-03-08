@@ -1,30 +1,26 @@
-// import { Suspense } from 'react'
 import { getPosts } from '@/api'
-import { PostList } from '@/components'
-import { Pagination } from '@/components/pagination/pagination'
-import Loading from './loading'
+import { Pagination, PostList, Skeleton } from '@/components'
 import { Suspense } from 'react'
 
 import styles from './page.module.css'
 
-export const revalidate = 60
-
-type Params = Promise<{ slug: string }>
-type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
 export default async function Home(props: {
-	params: Params
-	searchParams: SearchParams
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
-	const params = await props.params
 	const searchParams = await props.searchParams
 	const posts: Post[] = await getPosts(searchParams?.page as string)
-	console.log(params, searchParams)
+	if (posts.length === 0) {
+		return (
+			<main className={styles.main}>
+				<p className={styles.text}>Не удалось найти список постов</p>
+			</main>
+		)
+	}
 	return (
-		<Suspense fallback={<Loading />}>
+		<Suspense fallback={<Skeleton />}>
 			<main className={styles.main}>
 				<PostList posts={posts} />
-				{/* <Loading /> */}
 				<Pagination />
 			</main>
 		</Suspense>

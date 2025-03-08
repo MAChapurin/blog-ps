@@ -19,7 +19,6 @@ export function Pagination() {
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString())
       params.set(name, value)
-
       return params.toString()
     },
     [searchParams]
@@ -62,9 +61,6 @@ export function Pagination() {
         const value = index + 2
         return (
           <button
-            onMouseOver={() => {
-              console.log(value)
-            }}
             onClick={() => onClick(String(value))}
             className={clsx(styles.link,
               {

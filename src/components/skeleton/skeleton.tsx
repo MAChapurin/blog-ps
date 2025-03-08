@@ -1,6 +1,6 @@
-import styles from './page.module.css'
+import styles from './skeleton.module.css'
 
-const Skeleton = () => (
+const SkeletonItem = () => (
   <div className={styles.skeleton}>
     <div className={styles.skeleton__header} />
     <div className={styles.skeleton__subheader} />
@@ -10,10 +10,10 @@ const Skeleton = () => (
 )
 
 
-export default function Loading() {
+export function Skeleton() {
   return (
     <div className={styles.container}>
-      {Array.from({ length: 6 }).map((_, index) => <Skeleton key={index} />)}
+      {Array.from({ length: 6 }).map((_, index) => <SkeletonItem key={index} />)}
     </div>
   )
 }
