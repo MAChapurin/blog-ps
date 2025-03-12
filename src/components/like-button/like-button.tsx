@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import { Icon } from '@/components'
 
 import { LikeButtonProps } from './like-button.types'
