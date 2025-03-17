@@ -1,8 +1,8 @@
 import { getCommentsByPostId, getPostById } from '@/api'
 import {
 	Author,
+	CommentForm,
 	CommentList,
-	Form,
 	LikeButton,
 	TextDivider,
 	TimeText
@@ -64,7 +64,7 @@ export default async function DetailPostPage({ params }: DetailPostPageProps) {
 			</div>
 			<h2 className={styles.title}>Комментарии</h2>
 			<CommentList comments={comments} />
-			<Form />
+			<CommentForm />
 		</main>
 	)
 }
