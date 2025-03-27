@@ -39,8 +39,9 @@ export function Pagination() {
   }
 
   return (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       <button
+        aria-label='Предыдущая страница'
         onClick={onDecrementPage}
         disabled={!page || page === '1'}
         className={styles.prev}>
@@ -49,9 +50,13 @@ export function Pagination() {
           Предыдущая страница
         </span>
       </button>
-      <button className={clsx(styles.link, {
-        [styles.active]: Number(page) === 1 || !page
-      })} onClick={() => onClick('1')}>
+      <button
+        aria-current={Number(page) === 1 || !page}
+        aria-label='Перейти на страницу 1'
+        aria-expanded={Number(page) === 1 || !page}
+        className={clsx(styles.link, {
+          [styles.active]: Number(page) === 1 || !page
+        })} onClick={() => onClick('1')}>
         1
       </button>
       <div className={clsx(styles.leftPoints, styles.hidden, {
@@ -61,6 +66,9 @@ export function Pagination() {
         const value = index + 2
         return (
           <button
+            aria-current={Number(page) === value}
+            aria-label={`Перейти на страницу ${value}`}
+            aria-expanded={Number(page) === value}
             onClick={() => onClick(String(value))}
             className={clsx(styles.link,
               {
@@ -82,6 +90,7 @@ export function Pagination() {
         {PER_PAGE}
       </button>
       <button
+        aria-label='Перейти на следующую страницу'
         onClick={onIncrementPage}
         disabled={Number(page) >= PER_PAGE}
         className={styles.next}>
@@ -90,6 +99,6 @@ export function Pagination() {
         </span>
         <Icon id='arrow' width={20} height={20} />
       </button>
-    </div>
+    </nav>
   )
 }

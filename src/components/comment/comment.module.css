@@ -3,19 +3,47 @@
 }
 
 .author {
+	position: relative;
 	color: var(--primary-900);
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-small);
+	transition: color 0.3s;
 }
 
 .email {
+	position: relative;
 	color: var(--primary-200);
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-small);
+	transition: color 0.3s;
 }
 
 .description {
 	color: var(--primary-300);
 	font-size: var(--font-size-large);
 	line-height: var(--line-height-x-large);
+}
+
+.author:after,
+.email::after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: var(--secondary-100);
+	transform: scaleX(0);
+	transition: transform 0.2s;
+}
+
+.author:focus-visible,
+.email:focus-visible {
+	outline: none;
+	color: var(--secondary-100);
+}
+
+.author:focus-visible::after,
+.email:focus-visible::after {
+	transform: scaleX(1);
 }

@@ -23,6 +23,12 @@
 	transition: transform 0.3s;
 }
 
+.link {
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+	transition: outline-color 0.3s;
+}
+
 .rightPoints,
 .leftPoints {
 	display: none;
@@ -40,6 +46,9 @@
 	color: var(--secondary-100);
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-small);
+	border-radius: 8px;
+	outline: 1px solid transparent;
+	transition: outline-color 0.3s;
 }
 
 .prev:disabled,
@@ -50,6 +59,19 @@
 
 .prev svg {
 	transform: rotate(180deg);
+}
+
+.link:focus-visible {
+	outline: 2px solid var(--primary-200);
+}
+
+.link.active:focus-visible {
+	outline-color: var(--secondary-100);
+}
+
+.prev:focus-visible,
+.next:focus-visible {
+	outline: 1px solid var(--secondary-100);
 }
 
 @media (hover: hover) {

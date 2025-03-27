@@ -10,13 +10,13 @@ export const Comment: FC<Pick<Comment, 'name' | 'email' | 'body'>> = ({
 	body
 }) => {
 	return (
-		<div>
+		<div aria-label='Комментарий'>
 			<div className={styles.header}>
-				<Link className={styles.author} href={'/'}>
+				<Link aria-label={`Перейти на страницу автора ${name}`} className={styles.author} href={'/'}>
 					{name}
 				</Link>
 				<TextDivider />
-				<a className={styles.email} href={`mailto:${email}`}>
+				<a aria-label={`Написать автору ${name} на почту ${email}`} className={styles.email} href={`mailto:${email}`}>
 					{email}
 				</a>
 			</div>

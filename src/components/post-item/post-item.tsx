@@ -9,11 +9,12 @@ export const PostItem: FC<Omit<Post, 'userId'>> = ({ body, title, id }) => {
 	return (
 		<article className={styles.item}>
 			<Image
+				title={`Изображение для поста ${title}`}
 				className={styles.image}
 				src={'/mini.jpg'}
 				alt='image for post'
 				width={300}
-				height={300}
+				height={200}
 			/>
 			<header className={styles.header}>
 				<Author />
@@ -29,7 +30,7 @@ export const PostItem: FC<Omit<Post, 'userId'>> = ({ body, title, id }) => {
 			</section>
 			<footer className={styles.footer}>
 				<TimeText dateTime='3m'>3 минуты</TimeText>
-				<Link className={styles.link} href={'/' + id}>
+				<Link aria-label='Читать пост' className={styles.link} href={'/' + id}>
 					Читать <Icon id='arrow' width={20} height={20} />
 				</Link>
 			</footer>

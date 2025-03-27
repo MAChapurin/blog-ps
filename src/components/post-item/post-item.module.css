@@ -43,11 +43,32 @@
 }
 
 .link {
+	position: relative;
 	display: flex;
 	align-items: center;
 	color: var(--secondary-100);
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-small);
+}
+
+.link:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: var(--secondary-100);
+	transform: scaleX(0);
+	transition: transform 0.2s;
+}
+
+.link:focus-visible {
+	outline: none;
+}
+
+.link:focus-visible::after {
+	transform: scaleX(1);
 }
 
 .link svg {

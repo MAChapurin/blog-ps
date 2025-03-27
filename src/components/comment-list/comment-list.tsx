@@ -8,7 +8,7 @@ import styles from './comment-list.module.css'
 
 export const CommentList: FC<CommentListProps> = async ({ comments }) => {
 	return await (
-		<ul className={styles.list}>
+		<ul className={styles.list} aria-label='Список комментариев'>
 			{comments.map(comment => {
 				const { name, body, email } = comment
 				return (
