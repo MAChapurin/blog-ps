@@ -12,14 +12,14 @@ export default async function Home(props: {
 	const posts: Post[] = await getPosts(searchParams?.page as string)
 	if (posts.length === 0) {
 		return (
-			<main className={styles.main}>
-				<p className={styles.text}>Не удалось найти список постов</p>
+			<main className={styles.main} role='main'>
+				<p role='alert' className={styles.text}>Не удалось найти список постов</p>
 			</main>
 		)
 	}
 	return (
 		<Suspense fallback={<Skeleton />}>
-			<main className={styles.main}>
+			<main className={styles.main} role='main'>
 				<PostList posts={posts} />
 				<Pagination />
 			</main>

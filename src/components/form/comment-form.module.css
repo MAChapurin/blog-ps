@@ -18,6 +18,10 @@
 	transition: border-color 0.2s;
 }
 
+.input:focus-visible {
+	border-color: var(--secondary-100);
+}
+
 .inputMessage,
 .textAreaMessage {
 	position: absolute;
@@ -53,6 +57,10 @@
 	border-color: red;
 }
 
+.textArea:focus-visible {
+	border-color: var(--secondary-100);
+}
+
 .btn {
 	display: flex;
 	align-items: center;
@@ -64,10 +72,17 @@
 	color: #fff;
 	background-color: var(--primary-800);
 	border-radius: 8px;
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+	transition: outline-color 0.3s;
 }
 
 .btn:disabled {
 	opacity: 50%;
+}
+
+.btn:focus-visible {
+	outline: 2px solid var(--primary-800);
 }
 
 .successMessage {

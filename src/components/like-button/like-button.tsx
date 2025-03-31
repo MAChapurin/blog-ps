@@ -39,6 +39,8 @@ export const LikeButton: FC<LikeButtonProps> = ({
 
 	return (
 		<button
+			aria-label={isLiked ? 'Убрать лайк' : 'Поставить лайк'}
+			aria-pressed={isLiked}
 			onClick={onClick}
 			className={clsx(
 				styles.like,

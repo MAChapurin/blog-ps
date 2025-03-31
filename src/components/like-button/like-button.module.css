@@ -4,9 +4,12 @@
 	line-height: var(--line-height-small);
 	display: flex;
 	align-items: center;
+	border-radius: 8px;
+	border: 1px solid transparent;
 	transition:
 		color 0.3s,
 		background 0.3s,
+		border-color 0.3s,
 		opacity 0.3s,
 		transform 0.3s;
 }
@@ -38,6 +41,10 @@
 
 .rounded:active {
 	transform: scale(0.95);
+}
+
+.like:focus-visible {
+	border-color: var(--secondary-100);
 }
 
 @media (hover: hover) {

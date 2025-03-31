@@ -47,6 +47,7 @@ export const CommentForm = () => {
 		<form ref={ref} className={styles.form} onSubmit={handleSubmit(onSubmit, onError)}>
 			<label htmlFor="text" className={styles.inputLabel}>
 				<input
+					aria-label='Поле ввода имени'
 					aria-invalid={errors.name ? true : false}
 					placeholder='Имя'
 					className={styles.input}
@@ -56,6 +57,7 @@ export const CommentForm = () => {
 			</label>
 			<label htmlFor="text" className={styles.inputLabel}>
 				<textarea
+					aria-label='Поле ввода комментария'
 					aria-invalid={errors.comment ? true : false}
 					placeholder='Комментарий'
 					className={styles.textArea}
@@ -63,13 +65,13 @@ export const CommentForm = () => {
 				/>
 				<p className={styles.textAreaMessage} role="alert">{commentErrorsMessage}</p>
 			</label>
-			<button className={styles.btn} type='submit' disabled={!!isDisabled}>
+			<button aria-label='Отправить комментарий' className={styles.btn} type='submit' disabled={!!isDisabled}>
 				Отправить
 			</button>
 			{isSuccess && <div className={styles.successMessage}>
 				<div className={styles.successMessage__wrap}>
 					<p role='alert'>Готово! Комментарий будет добавлен после прохождения модерации</p>
-					<button onClick={() => setIsSuccess(false)} className={styles.btn} type='button'>OK</button>
+					<button aria-label="Закрыть уведомление об успешной отправке" onClick={() => setIsSuccess(false)} className={styles.btn} type='button'>OK</button>
 				</div>
 			</div>}
 		</form>

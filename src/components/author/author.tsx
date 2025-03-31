@@ -11,7 +11,7 @@ export const Author: FC<AuthorProps> = ({
 	author = 'Front-end'
 }) => {
 	return (
-		<Link className={styles.author} href={href}>
+		<Link aria-label={`Перейти на страницу автора ${author}`} className={styles.author} href={href}>
 			{author}
 		</Link>
 	)
